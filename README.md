@@ -1,5 +1,6 @@
 # AgglutinationConcentration
-This project implements a machine learning-based software system for analyzing agglutination patterns in images and predicting sample concentrations.
+
+A tool for analyzing agglutination patterns and predicting concentrations.
 
 Requirements
 
@@ -29,6 +30,29 @@ The GUI provides:
 Image upload functionality
 Concentration prediction
 Result saving
+
+AgglutinationConcentrationCaculator/
+├── setup.py                    
+├── requirements.txt           
+├── README.md                 
+└── AgglutinationConcentrationCaculator/   
+    ├── __init__.py
+    ├── data/
+    │   ├── __init__.py
+    │   ├── Concentration.py
+    │   ├── dataset1.py
+    │   └── delete.py
+    ├── models/
+    │   ├── __init__.py
+    │   ├── CNN.py
+    │   ├── CNN1.py
+    │   ├── ResRF.py
+    │   ├── SVR.py
+    │   └── VGG.py
+    ├── utils/
+    │   ├── __init__.py
+    │   └── visualization.py
+    └── main.py    
 
 Example
 ![image](https://github.com/user-attachments/assets/d5b85d2f-ff3f-481b-aa3c-cba85a67537b)
