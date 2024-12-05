@@ -22,7 +22,7 @@ pillow>=9.0.0
 matplotlib>=3.4.0
 joblib>=1.1.0
 
-Usage
+##Usage
 
 Train the model:
 
@@ -59,7 +59,7 @@ bashCopypython -m src.AgglutinationConcentrationCalculator.gui.main_window
 ┣ 📜 requirements.txt
 ┗ 📜 README.md
 
-Example demo
-![63d286770fbec84aab1fe863e682c07](https://github.com/user-attachments/assets/42273d04-5bac-4f66-9ba0-1ce1469733f8)
-![219b238bfc6b7f54c328e96730404d3](https://github.com/user-attachments/assets/9840a495-806f-4578-93a7-e7c171aefb3d)
+## Example demo
+![63d286770fbec84aab1fe863e682c07](https://github.com/user-attachments/assets/4d088157-6c33-4117-8ba5-345c0fe3ef7c)
+
 
