@@ -4,6 +4,20 @@ from PyQt5.QtGui import QPixmap, QImage
 from PIL import Image
 import numpy as np
 
+"""
+Displaying agglutination images.
+
+This widget extends QLabel to create an image viewer that:
+- Loads and displays images
+- Maintains aspect ratio during scaling
+- Handles image format conversion
+- Provides smooth image resizing
+
+Methods:
+   load_image: Load and display an image file
+   convert_to_pixmap: Convert PIL Image to Qt QPixmap
+   resizeEvent: Handle widget resize events
+"""
 
 class ImageViewer(QLabel):
     def __init__(self):

@@ -12,6 +12,26 @@ import matplotlib.pyplot as plt
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 from models.ResRF import ResNetRF
 
+"""
+Training Script for ResNet-RF Hybrid Model
+
+This script trains a hybrid model combining ResNet18 and Random Forest for 
+agglutination concentration prediction. It includes:
+
+1. Dataset handling and k-fold cross validation
+2. Model training and evaluation
+3. Performance visualization
+4. Model saving
+
+The training process:
+- Uses 3-fold cross validation
+- Saves models after final fold
+- Plots actual vs predicted concentrations
+
+Usage:
+   python main.py --img_dir PATH_TO_IMAGES --batch_size BATCH_SIZE
+"""
+
 def plot_prediction_analysis(actuals, predictions):
     log_actuals = [0 if value == 0 else np.log10(value) for value in actuals]
     log_predictions = [0 if value == 0 else np.log10(value) for value in predictions]

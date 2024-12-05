@@ -4,6 +4,16 @@ import os
 import random
 import tensorflow as tf
 
+"""
+Image Augmentation Script for Agglutination Pattern Dataset
+
+Performs image augmentation including:
+- Random cropping 
+- Rotation (90°, 180°, 270°)
+- Horizontal and vertical flips
+
+The script takes input images and creates augmented versions to expand the training dataset.
+"""
 
 def load_image(image_path):
     img = cv2.imread(image_path, cv2.IMREAD_COLOR)
@@ -67,7 +77,7 @@ def process_images(image_dir, augmented_dir, crop_size, num_crops):
 
 def main():
     image_dir = 'C:/Users/XiaQi/Documents/Individual_Project/Agglutination Pictures'
-    augmented_dir = r"C:\Users\XiaQi\Documents\UW\bioen537\Augmented_Images"
+    augmented_dir = r"C:/Users/XiaQi/Documents/UW/bioen537/Augmented_Images"
     crop_size = 400
     num_crops = 12
 

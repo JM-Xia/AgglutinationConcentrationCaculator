@@ -12,6 +12,15 @@ from torchvision import transforms, models
 import torch.nn as nn
 from PIL import Image
 
+"""
+Main GUI Window for Agglutination Pattern Analysis Software.
+
+This class implements the main window interface that provides:
+- Image loading and display capabilities
+- ResNet-RF model inference for concentration prediction
+- Result visualization and saving
+
+"""
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -129,7 +138,6 @@ class MainWindow(QMainWindow):
             raise
 
     def load_image(self):
-        """Handle image loading"""
         file_name, _ = QFileDialog.getOpenFileName(
             self,
             "Open Image",
@@ -146,7 +154,6 @@ class MainWindow(QMainWindow):
                 QMessageBox.critical(self, "Error", f"Failed to load image: {str(e)}")
 
     def analyze_image(self):
-        """Analyze the loaded image"""
         if not self.image_viewer.image:
             QMessageBox.warning(self, "Warning", "Please load an image first")
             return
@@ -180,7 +187,6 @@ class MainWindow(QMainWindow):
             self.statusBar().showMessage("Analysis failed")
 
     def save_results(self):
-        """Save prediction results and image"""
         if not hasattr(self.image_viewer, 'image'):
             QMessageBox.warning(self, "Warning", "No image to save")
             return
@@ -207,7 +213,6 @@ class MainWindow(QMainWindow):
 
 
 def launch_gui():
-    """Launch the GUI application"""
     app = QApplication(sys.argv)
     app.setStyle('Fusion')
     window = MainWindow()

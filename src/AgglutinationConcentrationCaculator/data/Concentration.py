@@ -3,16 +3,43 @@ from PIL import Image
 from torch.utils.data import Dataset
 from sklearn.model_selection import train_test_split
 
+"""
+Dataset class for loading and processing agglutination concentration images.
+
+The dataset splits data into training , testing and validation sets, and handles image loading
+and concentration value parsing from filenames.
+"""
+
 class ConcentrationDataset(Dataset):
-    def __init__(self, img_dir, transform=None, val_split=0.2, is_train=True):
+    def __init__(self, img_dir, transform=None, split='train'):
         self.img_dir = img_dir
         self.transform = transform
-        self.is_train = is_train  # Use boolean flag to differentiate between train and val splits.
 
+        # Get all image files
         all_imgs = os.listdir(self.img_dir)
-        train_imgs, val_imgs = train_test_split(all_imgs, test_size=val_split, random_state=42)
 
-        self.dataset_imgs = train_imgs if self.is_train else val_imgs
+        # First split: 70% train, 30% temp
+        train_imgs, temp_imgs = train_test_split(
+            all_imgs,
+            train_size=0.7,
+            random_state=42
+        )
+
+        # Second split: Split temp into equal val and test
+        val_imgs, test_imgs = train_test_split(
+            temp_imgs,
+            test_size=0.5,
+            random_state=42
+        )
+
+        # Select appropriate split
+        if split == 'train':
+            self.dataset_imgs = train_imgs  # 70%
+        elif split == 'val':
+            self.dataset_imgs = val_imgs  # 15%
+        else:  # test
+            self.dataset_imgs = test_imgs  # 15%
+
 
     def __len__(self):
         return len(self.dataset_imgs)

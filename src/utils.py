@@ -13,7 +13,7 @@ This module provides utility functions supporting both the training pipeline and
 of the agglutination concentration calculator. It includes functions for:
 
 Core Functionalities:
-   - Device management (CPU/GPU selection)
+   - Device management
    - Model file validation
    - Logging setup and configuration
 """

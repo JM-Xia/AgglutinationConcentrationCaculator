@@ -5,9 +5,14 @@ A tool for analyzing agglutination patterns and predicting concentrations.
 ## Installation
 
 ```bash
-pip install git+https://github.com/JM-Xia/AgglutinationConcentrationCaculator.git
+# Clone the repository
+git clone https://github.com/yourusername/AgglutinationConcentrationCalculator.git
+cd AgglutinationConcentrationCalculator
 
-Requirements
+# Install the package
+pip install -e .
+
+## Requirements
 
 torch>=2.0.1
 torchvision>=0.15.2
@@ -18,44 +23,41 @@ matplotlib>=3.4.0
 joblib>=1.1.0
 
 Usage
-1. Training the Model
-Run the training script with the Random Forest model:
-bashCopypython main.py --model RandomForest 
-Training parameters can be customized:
 
---model: Model type (default: "RandomForest")
---batch_size: Batch size for training (default: 32)
---img_dir: Directory containing training images
+Train the model:
 
-2. Using the GUI
-After training, run the visualization interface:
-bashCopypython visualization.py
-The GUI provides:
+bashCopypython -m src.AgglutinationConcentrationCalculator.main --img_dir "path/to/images" --batch_size 32
 
-Image upload functionality
-Concentration prediction
-Result saving
+Use the GUI:
 
-📦 AgglutinationConcentrationCaculator
+bashCopypython -m src.AgglutinationConcentrationCalculator.gui.main_window
+
+## Structure
+📦 AgglutinationConcentrationCalculator
 ┣ 📂 src
-┃ ┗ 📂 AgglutinationConcentrationCaculator
+┃ ┗ 📂 AgglutinationConcentrationCalculator
 ┃   ┣ 📜 init.py
-┃   ┣ 📜 main.py
-┃   ┣ 📜 utils.py
+┃   ┣ 📜 main.py           # Training script
+┃   ┣ 📜 utils.py          # Utility functions
+┃   ┣ 📂 data
+┃   ┃ ┣ 📜 init.py
+┃   ┃ ┣ 📜 dataset1.py
+┃   ┃ ┗ 📜 Concentration.py # Dataset handling
+┃   ┣ 📂 models
+┃   ┃ ┣ 📜 init.py
+┃   ┃ ┣ 📜 CNN.py
+┃   ┃ ┣ 📜 SVR.py
+┃   ┃ ┗ 📜 ResRF.py     # Hybrid model implementation
 ┃   ┗ 📂 gui
 ┃     ┣ 📜 init.py
-┃     ┣ 📜 main_window.py
+┃     ┣ 📜 main_window.py   # GUI main window
 ┃     ┗ 📂 components
 ┃       ┣ 📜 init.py
-┃       ┗ 📜 image_viewer.py
-┣ 📂 tests
-┃ ┣ 📜 init.py
-┃ ┗ 📜 test_utils.py
+┃       ┗ 📜 image_viewer.py # Image viewing component
+┣ 📂 tests                  # Unit tests
 ┣ 📜 setup.py
 ┣ 📜 requirements.txt
-┣ 📜 README.md
-┗ 📜 LICENSE
+┗ 📜 README.md
 
 Example demo
-![image](https://github.com/user-attachments/assets/d5b85d2f-ff3f-481b-aa3c-cba85a67537b)
-![image](https://github.com/user-attachments/assets/9dcc29e4-39f7-4a38-920c-fc4e9c64d7d3)
+
