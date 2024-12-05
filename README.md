@@ -13,7 +13,7 @@ cd AgglutinationConcentrationCalculator
 pip install -e .
 
 ## Requirements
-
+=
 torch>=2.0.1
 torchvision>=0.15.2
 numpy>=1.21.0
@@ -23,7 +23,7 @@ matplotlib>=3.4.0
 joblib>=1.1.0
 
 ##Usage
-
+=
 Train the model:
 
 bashCopypython -m src.AgglutinationConcentrationCalculator.main --img_dir "path/to/images" --batch_size 32
