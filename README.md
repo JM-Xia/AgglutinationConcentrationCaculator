@@ -8,11 +8,12 @@ A tool for analyzing agglutination patterns and predicting concentrations.
 # Clone the repository
 git clone https://github.com/yourusername/AgglutinationConcentrationCalculator.git
 cd AgglutinationConcentrationCalculator
+```
 
 # Install the package
 pip install -e .
 
-### Requirements
+## Requirements
 
 torch>=2.0.1
 torchvision>=0.15.2
