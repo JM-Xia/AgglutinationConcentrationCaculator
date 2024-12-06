@@ -6,7 +6,7 @@ A tool for analyzing agglutination patterns and predicting concentrations.
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/AgglutinationConcentrationCalculator.git
+git clone https://github.com/JM-Xia/AgglutinationConcentrationCaculator.git
 cd AgglutinationConcentrationCalculator
 
 # Install the package
