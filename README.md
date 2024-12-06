@@ -49,25 +49,45 @@ bashCopypython -m src.AgglutinationConcentrationCalculator.gui.main_window
 ┃   ┣ 📜 init.py
 
 ┃   ┣ 📜 main.py           # Training script
+
 ┃   ┣ 📜 utils.py          # Utility functions
+
 ┃   ┣ 📂 data
+
 ┃   ┃ ┣ 📜 init.py
+
 ┃   ┃ ┣ 📜 dataset1.py
+
 ┃   ┃ ┗ 📜 Concentration.py # Dataset handling
+
 ┃   ┣ 📂 models
+
 ┃   ┃ ┣ 📜 init.py
+
 ┃   ┃ ┣ 📜 CNN.py
+
 ┃   ┃ ┣ 📜 SVR.py
+
 ┃   ┃ ┗ 📜 ResRF.py     # Hybrid model implementation
+
 ┃   ┗ 📂 gui
+
 ┃     ┣ 📜 init.py
+
 ┃     ┣ 📜 main_window.py   # GUI main window
+
 ┃     ┗ 📂 components
+
 ┃       ┣ 📜 init.py
+
 ┃       ┗ 📜 image_viewer.py # Image viewing component
+
 ┣ 📂 tests                  # Unit tests
+
 ┣ 📜 setup.py
+
 ┣ 📜 requirements.txt
+
 ┗ 📜 README.md
 
 ## Example demo
