@@ -37,7 +37,7 @@ bashCopypython -m src.AgglutinationConcentrationCalculator.main --img_dir "path/
 
 Use the GUI:
 
-bashCopypython -m src.AgglutinationConcentrationCalculator.gui.main_window
+bashCopypython -m src.AgglutinationConcentrationCalculator.GUI.main_window
 
 ## Structure
 📦 AgglutinationConcentrationCalculator
