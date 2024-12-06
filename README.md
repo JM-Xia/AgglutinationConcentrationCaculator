@@ -41,9 +41,13 @@ bashCopypython -m src.AgglutinationConcentrationCalculator.gui.main_window
 
 ## Structure
 📦 AgglutinationConcentrationCalculator
+
 ┣ 📂 src
+
 ┃ ┗ 📂 AgglutinationConcentrationCalculator
+
 ┃   ┣ 📜 init.py
+
 ┃   ┣ 📜 main.py           # Training script
 ┃   ┣ 📜 utils.py          # Utility functions
 ┃   ┣ 📂 data
