@@ -12,7 +12,8 @@ cd AgglutinationConcentrationCalculator
 # Install the package
 pip install -e .
 ```
-
+Or
+pip install agglutinationconcentrationcalculator
 ## Requirements
 
 torch>=2.0.1
