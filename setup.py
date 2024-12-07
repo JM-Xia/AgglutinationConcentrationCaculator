@@ -4,7 +4,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setup(
-    name="agglutination_calculator",
+    name="agglutinationconcentraioncalculator",
     version="0.1.0",
     author="Gabrielle",
     description="A tool for analyzing agglutination patterns and calculating concentrations",
