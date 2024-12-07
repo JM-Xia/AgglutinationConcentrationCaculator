@@ -21,7 +21,6 @@ import shutil
 class TestUtils(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        """Set up test fixtures."""
         # Create temporary directory for test files
         cls.temp_dir = tempfile.mkdtemp()
 
@@ -31,7 +30,6 @@ class TestUtils(unittest.TestCase):
         Image.fromarray(test_image).save(cls.test_image_path)
 
     def test_load_image(self):
-        """Test image loading functionality."""
         # Test valid image loading
         image = load_image(self.test_image_path)
         self.assertIsInstance(image, torch.Tensor)
@@ -42,17 +40,14 @@ class TestUtils(unittest.TestCase):
             load_image("nonexistent.jpg")
 
     def test_get_device(self):
-        """Test device selection."""
         device = get_device()
         self.assertIsInstance(device, torch.device)
 
     def test_save_prediction_result(self):
-        """Test saving prediction results."""
         save_path = os.path.join(self.temp_dir, "predictions.txt")
         prediction = 0.5
         save_prediction_result(prediction, save_path)
 
-        # Check if file exists and content is correct
         self.assertTrue(os.path.exists(save_path))
         with open(save_path, 'r') as f:
             content = f.read()
@@ -60,7 +55,6 @@ class TestUtils(unittest.TestCase):
 
     @classmethod
     def tearDownClass(cls):
-        """Clean up test files."""
         import shutil
         shutil.rmtree(cls.temp_dir)
 
@@ -68,12 +62,10 @@ class TestUtils(unittest.TestCase):
 class TestGUI(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        """Initialize QApplication once for all tests."""
         cls.app = QApplication([])
         cls.window = MainWindow()
 
     def test_window_initialization(self):
-        """Test window initialization."""
         self.assertIsNotNone(self.window)
         self.assertEqual(
             self.window.windowTitle(),
@@ -81,16 +73,13 @@ class TestGUI(unittest.TestCase):
         )
 
     def test_image_viewer(self):
-        """Test image viewer component."""
         self.assertIsNotNone(self.window.image_viewer)
 
     def test_buttons(self):
-        """Test button creation and properties."""
         self.assertTrue(hasattr(self.window, 'load_button'))
         self.assertTrue(hasattr(self.window, 'analyze_button'))
 
     def test_result_label(self):
-        """Test result label initialization."""
         self.assertTrue(hasattr(self.window, 'result_label'))
         self.assertEqual(
             self.window.result_label.text(),
@@ -99,28 +88,24 @@ class TestGUI(unittest.TestCase):
 
     @classmethod
     def tearDownClass(cls):
-        """Clean up after all tests."""
         cls.window.close()
 
 
 class TestResNetRF(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        """Set up test fixtures."""
         cls.temp_dir = tempfile.mkdtemp()
 
         # Create test images directory
         cls.test_img_dir = os.path.join(cls.temp_dir, "test_images")
         os.makedirs(cls.test_img_dir)
 
-        # Create a few test images
         for i in range(5):
             img_path = os.path.join(cls.test_img_dir, f"test_image_{i}.jpg")
             test_image = np.random.randint(0, 255, (100, 100, 3), dtype=np.uint8)
             Image.fromarray(test_image).save(img_path)
 
     def test_model_training(self):
-        """Test ResNetRF model training."""
         # Setup data
         transform = transforms.Compose([
             transforms.Resize((256, 256)),
@@ -149,7 +134,6 @@ class TestResNetRF(unittest.TestCase):
 
     @classmethod
     def tearDownClass(cls):
-        """Clean up test files."""
 
         shutil.rmtree(cls.temp_dir)
 
