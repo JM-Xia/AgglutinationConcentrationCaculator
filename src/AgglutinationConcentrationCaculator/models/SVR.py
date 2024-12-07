@@ -6,11 +6,11 @@ import torch
 from torch.utils.data import DataLoader
 from torchvision import models, transforms
 import torchvision.transforms as T
-from torchvision.models import resnet50, ResNet50_Weights
+from torchvision.models import resnet18, ResNet18_Weights
 
 def extract_features_and_train_svr(train_dataset, val_dataset, args):
     # Initialize the feature extractor model
-    feature_extractor = models.resnet50(weights = ResNet50_Weights.DEFAULT)
+    feature_extractor = models.resnet18(weights=models.ResNet18_Weights.IMAGENET1K_V1)
     feature_extractor = torch.nn.Sequential(*(list(feature_extractor.children())[:-1]))
     feature_extractor.eval()
 
