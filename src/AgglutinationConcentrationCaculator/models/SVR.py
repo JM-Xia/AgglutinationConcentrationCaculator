@@ -10,7 +10,7 @@ from torchvision.models import resnet50, ResNet50_Weights
 
 def extract_features_and_train_svr(train_dataset, val_dataset, args):
     # Initialize the feature extractor model
-    feature_extractor = models.resnet50(weights = ResNet50_Weights.DEFAULT)
+    feature_extractor = models.resnet18(weights = ResNet18_Weights.DEFAULT)
     feature_extractor = torch.nn.Sequential(*(list(feature_extractor.children())[:-1]))
     feature_extractor.eval()
 
